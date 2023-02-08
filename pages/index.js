@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+// import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,16 +16,26 @@ export default function Home({ results }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1 className="my-10">New dietary app</h1>
+        <h1 className="my-10 text-red-500">New dietary app</h1>
 
         <div className="flex items-center gap-2 mb-10">
-          <label for="search-food">Search for food</label>
-          <input type="text" id="search-food" placeholder="search" className="px-2" />
+          <label htmlFor="search-food">Search for food</label>
+          <input
+            type="text"
+            id="search-food"
+            placeholder="search"
+            className="px-2"
+          />
+        </div>
+        <h3>test this field</h3>
+        <div className="flex text-red-500">
+          <p>another test</p>
+          <p>another test</p>
         </div>
         {results &&
           results.foods.map((food) => (
             <section key={food.fdcId}>
-              <h2>{food.description}</h2>
+              <h2 className="text-red-500">{food.description}</h2>
 
               <ul>
                 {food.foodNutrients
